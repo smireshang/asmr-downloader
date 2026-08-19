@@ -1,7 +1,7 @@
 services:
 
   asmr-downloader:
-    image: asmr-downloader:v1.0.2
+    image: asmr-downloader:latest
     container_name: asmr-downloader
     restart: unless-stopped
     ports:
