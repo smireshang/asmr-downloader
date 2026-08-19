@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>ASMR下载器</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>ASMR Downloader</h1>
+        <p>输入RJ号，选择需要下载的文件</p>
+    </div>
+
+    <div class="search-box">
+
+        <input
+            id="rj"
+            type="text"
+            placeholder="例如 RJ01370272"
+            autocomplete="off"
+        >
+
+        <button
+            id="searchBtn"
+            onclick="searchWork()"
+        >
+            查询
+        </button>
+
+    </div>
+
+    <div
+        id="error"
+        class="error hidden"
+    ></div>
+
+    <div
+        id="work"
+        class="hidden"
+    >
+
+        <div class="work-header">
+
+            <div>
+                <div class="rj-title" id="workId"></div>
+                <h2 id="workTitle"></h2>
+            </div>
+
+            <div class="actions">
+
+                <button
+                    class="secondary"
+                    onclick="selectAll()"
+                >
+                    全选
+                </button>
+
+                <button
+                    class="secondary"
+                    onclick="unselectAll()"
+                >
+                    全不选
+                </button>
+
+                <button
+                    id="downloadBtn"
+                    onclick="startDownload()"
+                >
+                    开始下载
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="summary">
+            <span id="fileCount"></span>
+            <span id="totalSize"></span>
+        </div>
+
+        <div id="files"></div>
+
+    </div>
+
+    <div
+        id="progress"
+        class="hidden"
+    >
+
+        <div class="progress-header">
+
+            <h2>下载进度</h2>
+
+            <span id="taskStatus">
+                等待中
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                id="progressValue"
+                class="progress-value"
+            ></div>
+
+        </div>
+
+        <div
+            id="progressText"
+            class="progress-text"
+        >
+            0%
+        </div>
+
+        <div id="taskFiles"></div>
+
+    </div>
+
+</div>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>

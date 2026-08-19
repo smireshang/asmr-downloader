@@ -1,0 +1,24 @@
+# Downloaded files
+downloads/
+data/
+
+# Partial downloads
+*.part
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Go build output
+bin/
+dist/
+*.test
+coverage.out
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
